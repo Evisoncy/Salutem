@@ -9,6 +9,7 @@ import { DownloadComponent } from './download/download.component';
 import { CuestionarioComponent } from './triaje/cuestionario/cuestionario.component';
 import { PreguntaComponent } from './triaje/pregunta/pregunta.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
     DownloadComponent,
     CuestionarioComponent,
     PreguntaComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

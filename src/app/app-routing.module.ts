@@ -6,9 +6,10 @@ import { TriajeComponent } from './triaje/triaje.component';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent},
-  {path:"triaje", component:TriajeComponent},
-  {path:"download", component:DownloadComponent},
-  {path:"",pathMatch:"full", redirectTo: "/home"}
+  {path:"",pathMatch:"full", redirectTo: "/home"},
+    {path:"triaje", component:TriajeComponent},
+  {path:"download", component:DownloadComponent}
+  
 ];
 
 @NgModule({
