@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route :Router) { }
 
   ngOnInit(): void {
   }
 
+  triaje(){
+    this.route.navigate(['/triaje']);
+  }
+  descargar(){
+    this.route.navigate(['/download']);
+  }
 }

@@ -4,7 +4,7 @@ body {
 }
 
 .topnav {
-    overflow: hidden;
+    overflow: auto;
     background-color: rgb(12, 12, 11);
 }
 
@@ -23,22 +23,26 @@ body {
     float: right;
 }
 
-.topnav .header-left a img {
-    padding: 2px;
-    border: 50px;
+.topnav .header-left a.logo {
+    padding: 10px;
+}
+
+.topnav .header-left a.logo img {
+    padding: 3px;
+    border: 20px;
 }
 
 .header-left a {
     background-color: black;
 }
 
-.topnav a:hover {
+.topnav a:target {
     background-color: #ddd;
     color: black;
 }
 
 .topnav a.active {
-    background-color: #4CAF50;
+    background-color: rgb(124, 59, 108);
     color: white;
 }
 

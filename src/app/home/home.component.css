@@ -1,0 +1,168 @@
+.contenedor {
+    display: contents;
+    margin: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    /*PARA Q NO QUEDE BORDES*/
+}
+
+.contenedorTitulo {
+    text-align: center;
+    color: #464646;
+    font-size: 2em;
+    margin: 0;
+}
+
+.contenedorTitulo h2 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.col-izq {
+    width: 50%;
+    float: left;
+    background-color: #D0D0D0;
+    /*#745AF2*/
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.col-der {
+    width: 50%;
+    float: right;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.tema {
+    padding: 20px;
+    padding-right: 35px;
+    /*padding-left: 20px;
+    padding-right: 20px;*/
+}
+
+.tema h4 {
+    font-size: 20px;
+}
+
+.col-izq {
+    color: #fff;
+    font-size: 14px;
+}
+
+.desc {
+    padding-left: 100px;
+}
+
+
+/***********Unico PROBLEMA NECESITO Q LA ALTURA 
+DE LA IMAGEN VARIE CON EL TEXTO*/
+
+.con-img {
+    /*padding-top: 100px;*/
+    padding-right: 20px;
+    width: 80px;
+    height: 160%;
+    /*esta q ocupad e toda lascol en %*/
+    float: left;
+}
+
+.img {
+    padding-top: 70%;
+    max-width: 100%;
+}
+
+@media screen and (max-width:900px) {
+    .col-izq {
+        width: 100%;
+    }
+    .col-der {
+        width: 100%;
+    }
+}
+
+.btn-group .button {
+    display: inline;
+    background-color: #4CAF50;
+    /* Green */
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    float: center;
+    border-radius: 10px;
+}
+
+.btn-group .button:hover {
+    background-color: #3e8e41;
+}
+
+.row h2 {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
+/*.row .button {
+    display: inline;
+    background-color: #4CAF50;
+    
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    float: left;
+    border-radius: 10px;
+}*/
+
+.contenedorBotonTitulo {
+    text-align: center;
+    color: #464646;
+    font-size: 2em;
+    margin: 0;
+}
+
+.contenedorBotonTitulo h2 {
+    padding: 15px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-group .button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+    margin-left: 25%;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+
+.btn-group .button:hover {
+    background-color: #3e8e41;
+}
+
+.btn-group {
+    display: inline;
+}
