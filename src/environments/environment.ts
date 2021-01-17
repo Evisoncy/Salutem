@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlMongoDB: 'http://localhost:3000',
+  urlXFuzzy: 'http://localhost:2800'
 };
 
 /*
