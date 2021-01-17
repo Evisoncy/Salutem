@@ -2,6 +2,10 @@
     margin: 10px;
 }
 
+.col-12 {
+    color: white;
+}
+
 p {
     margin: 0px;
 }
@@ -9,4 +13,8 @@ p {
 .imagenes {
     width: 300px;
     margin: 0 auto;
+}
+
+.imagenes {
+    color: white;
 }
