@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-triaje',
   templateUrl: './triaje.component.html',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TriajeComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(){}
   ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
-
 }
+

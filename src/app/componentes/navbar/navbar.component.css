@@ -29,7 +29,7 @@ body {
 
 .topnav .header-left a.logo img {
     padding: 3px;
-    border: 20px;
+    border: 0px;
 }
 
 .header-left a {
@@ -42,7 +42,7 @@ body {
 }
 
 .topnav a.active {
-    background-color: rgb(124, 59, 108);
+    background-color: #6A64FF;
     color: white;
 }
 
