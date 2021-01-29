@@ -11,10 +11,10 @@ import { Router } from '@angular/router';
   templateUrl: './triaje.component.html',
   styleUrls: ['./triaje.component.css']
 })
-export class TriajePage implements OnInit {
+export class TriajeComponent implements OnInit {
 
-  preguntas: PreguntaModel[];
-  cuestionarios: CuestionarioModel[];
+  preguntas: PreguntaModel[] = [];
+  cuestionarios: CuestionarioModel[] = [];
 
   paginaActual: number;
   cantidadCuestionarios: number;
@@ -29,10 +29,6 @@ export class TriajePage implements OnInit {
   constructor(private preguntaServices: PreguntasService, private xFuzzyService: XFuzzyService,
               private router: Router) {
     console.log(1212);
-    this.inicializarDatos();
-  }
-
-  inicializarDatos = () => {
     this.paginaActual = 1;
     this.cantidadCuestionarios = 5;
     this.loading = true;

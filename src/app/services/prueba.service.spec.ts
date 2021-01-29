@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { XfuzzyService } from './xfuzzy.service';
+import { PruebaService } from './prueba.service';
 
-describe('XfuzzyService', () => {
-  let service: XfuzzyService;
+describe('PruebaService', () => {
+  let service: PruebaService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(XfuzzyService);
+    service = TestBed.inject(PruebaService);
   });
 
   it('should be created', () => {

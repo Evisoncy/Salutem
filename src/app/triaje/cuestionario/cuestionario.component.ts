@@ -4,7 +4,6 @@ import { CuestionarioModel } from '../../models/cuestionario.model';
 import { Router } from '@angular/router';
 import { XFuzzyService } from '../../services/xfuzzy.service';
 import { AnalisisCuestionarioModel } from '../../models/AnalizasCuestionario.model';
-import { PreguntaModel } from '../../models/pregunta.model';
 
 @Component({
   selector: 'app-cuestionario',
@@ -13,8 +12,10 @@ import { PreguntaModel } from '../../models/pregunta.model';
 })
 export class CuestionarioComponent implements OnInit {
 
-  @Input() cuestionario: CuestionarioModel;
-  @Input() cantidadCuestionarios: number;
+  @Input()
+  cuestionario!: CuestionarioModel;
+  @Input() 
+  cantidadCuestionarios!: number;
   @Input() paginaActual: number= 1;
   @Output() numeroCambiado: EventEmitter<number>;
   @Output() analizarCuestionario: EventEmitter<AnalisisCuestionarioModel>;
@@ -68,11 +69,8 @@ export class CuestionarioComponent implements OnInit {
   }
 
   valorNoValido(value: string){
-
-    if(this.cuestionarioFomr.get(value)!==null) {
-      (this.cuestionarioFomr.get(value).touched && this.cuestionarioFomr.get(value).invalid)
-    }
-       :false;
+    var valor = this.cuestionarioFomr.get(value);
+    return (valor!==null) ? (valor.touched && valor.invalid) : false;
   }
 
   crearFormulario(){
@@ -160,25 +158,26 @@ export class CuestionarioComponent implements OnInit {
 
     this.analizarCuestionario.emit( new AnalisisCuestionarioModel(this.triaje, this.paginaActual));
 
+    return true;
   }
 
   private realizarCalculoCuestionario(){
-    const valoresCuestionario: object = this.cuestionarioFomr.value;
+    const valoresCuestionario: any = this.cuestionarioFomr.value;
     console.log(valoresCuestionario);
-    let index = 0;
+    let index: number = 0;
     this.triaje = [0, 0, 0, 0];
 
-    for (const pregunta of this.cuestionario.preguntas){
-      const tipoVariable: string = pregunta.tipoVariable;
+    for (const preguntaM of this.cuestionario.preguntas){
+      const tipoVariable: string = preguntaM.tipoVariable;
       const puntaje: number =
-        (pregunta.peso !== undefined) ? pregunta.peso : pregunta.pesoAlternativas[valoresCuestionario[`pregunta ${index + 1}`]];
+        (preguntaM.peso !== undefined) ? preguntaM.peso : (preguntaM.pesoAlternativas !== undefined) ? preguntaM.pesoAlternativas[valoresCuestionario[`pregunta ${index + 1}`]]:0;
 
-      if (pregunta.tipoAlternativa === 2){
+      if (preguntaM.tipoAlternativa === 2){
         this.procesarAlternativa(tipoVariable, puntaje);
       } else {
 
         // tslint:disable-next-line: prefer-for-of
-        for (let i = 0; i < pregunta.alternativas.length ; i += 1){
+        for (let i = 0; i < preguntaM.alternativas.length ; i += 1){
           const valor = valoresCuestionario[`pregunta ${index + 1}`][`pregunta ${index + 1} - alternativa ${i + 1}`];
 
           if ( valor !== null && valor !== false ){

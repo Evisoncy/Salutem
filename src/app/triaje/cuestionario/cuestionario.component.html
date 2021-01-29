@@ -1,46 +1,48 @@
 <form [formGroup]="cuestionarioFomr" (ngSubmit)="analizar()">
-    <div *ngFor=" let pregunta of cuestionario.preguntas; let idx=index ">
+    <div class="card" *ngFor=" let pregunta of cuestionario.preguntas; let idx=index ">
         <div *ngIf="!loading && paginaActual == pregunta.nroPagina;">
-            <div color="primary ">
+            <div class="card-header" color="primary ">
                 <div class="descripcion ">{{idx+1}}. {{pregunta.descripcion}}</div>
             </div>
-            <ion-list *ngIf="pregunta.tipoAlternativa==1" [formGroupName]="nombreGrupos[idx]">
-                <ion-item *ngFor="let alternativa of pregunta.alternativas; let aIdx = index ">
-                    <ion-label class="alternativas">{{alternativa}}</ion-label>
-                    <ion-checkbox [value]=false class="form-control" [formControlName]="nombreControles[idx][aIdx]" color="primary" slot="start" checked></ion-checkbox>
-                </ion-item>
-            </ion-list>
-            <ion-list *ngIf="pregunta.tipoAlternativa==2">
-                <ion-radio-group [formControl]="cuestionarioFomr.controls[nombreControles[idx][0]]" name="alternativas" [value]="false">
-                    <ion-item *ngFor="let alternativa of pregunta.alternativas; let aIdx= index">
-                        <ion-label class="alternativas">{{alternativa}}</ion-label>
-                        <ion-radio [value]=aIdx slot="start"></ion-radio>
-                    </ion-item>
-                </ion-radio-group>
-            </ion-list>
+            <div class="card-body">
+                <ul class="list-group" *ngIf="pregunta.tipoAlternativa==1" [formGroupName]="nombreGrupos[idx]">
+                    <li *ngFor="let alternativa of pregunta.alternativas; let aIdx = index ">
+                        <input class="form-check-input" type="checkbox" [value]=false [formControlName]="nombreControles[idx][aIdx]" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault"  class="form-control" >
+                            <label class="alternativas">{{alternativa}}</label>
+                        </label>
+                    </li>
+                </ul>
+                <ul class="list-group" *ngIf="pregunta.tipoAlternativa==2" >
+                    <li *ngFor="let alternativa of pregunta.alternativas; let aIdx = index " >  
+                        <input class="form-check-input" type="radio"  [formControlName]="nombreControles[idx]"  [name]="nombreControles[idx]" [value]="alternativa" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1"  class="form-control" >
+                            <label class="alternativas">{{alternativa}}</label>
+                        </label>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </ion-card>
-    <ion-footer *ngIf="paginaActual == cuestionario.nroPaginaAsignada">
-        <ion-toolbar color="ion-background-color">
-            <ion-grid>
-                <ion-row class="ion-text-center">
-                    <ion-col *ngIf="paginaActual!=1" [size]="colVolver">
-                        <ion-button (click)="rergesarCuestionario()" color="primary" fill="solid" shape="round">
-                            Volver
-                        </ion-button>
-                    </ion-col>
-                    <ion-col *ngIf="paginaActual!=cantidadCuestionarios" [size]="colSiguiente">
-                        <ion-button (click)="pasarCuestionario()" color="primary" fill="solid" shape="round" [disabled]="!cuestionarioFomr.valid">
-                            Siguiente
-                        </ion-button>
-                    </ion-col>
-                    <ion-col *ngIf="paginaActual==cantidadCuestionarios" [size]="colFinalizar">
-                        <button (click)="finalizarCuestionario()" color="success" fill="solid" shape="round" [disabled]="!cuestionarioFomr.valid">
-                            Finalizar
-                        </button>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-        </ion-toolbar>
-    </ion-footer>
+    </div>
+    <div *ngIf="paginaActual == cuestionario.nroPaginaAsignada">
+        <div color="ion-background-color">
+            <div class="row text-center ">
+                <div class=´col-md-{{colVolver}}´ *ngIf="paginaActual!=1">
+                    <button (click)="rergesarCuestionario()" >
+                        Volver
+                    </button>
+                </div>
+                <div class=´col-md-{{colSiguiente}}´ *ngIf="paginaActual!=cantidadCuestionarios">
+                    <button (click)="pasarCuestionario()" [disabled]="!cuestionarioFomr.valid">
+                        Siguiente
+                    </button>
+                </div>
+                <div class=´col-md-{{colFinalizar}}´ *ngIf="paginaActual==cantidadCuestionarios">
+                    <button (click)="finalizarCuestionario()" [disabled]="!cuestionarioFomr.valid">
+                        Finalizar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>
