@@ -79,8 +79,9 @@ export class TriajeComponent implements OnInit {
     this.triaje[(datosTriajeXCuestionario.nroPagina - 1)] = datosTriajeXCuestionario;
     this.analizarTriaje(datosTriajeXCuestionario.nroPagina).subscribe(resp => {
         if (datosTriajeXCuestionario.nroPagina === 5){
-          console.log(resp);
-          this.router.navigateByUrl(`/resultado/${resp}`);
+          console.log(resp, "antes del cambio de ruta");
+          console.log("antes del cambio de ruta.2");
+          this.router.navigateByUrl(`/triaje/resultado/${resp}`);
         }
       });
   }

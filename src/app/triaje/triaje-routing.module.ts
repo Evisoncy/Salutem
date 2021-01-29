@@ -8,8 +8,8 @@ import { TriajeComponent } from './triaje.component';
 
 const routes: Routes = [
   {path:"", component:TriajeComponent},
-  {path:"resultado", component:ResultadoComponent},
-  
+  {path:"resultado/:id", component:ResultadoComponent},
+
   {path:"**", pathMatch:"full", redirectTo:""}
   
 ];

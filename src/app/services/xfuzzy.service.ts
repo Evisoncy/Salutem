@@ -18,6 +18,9 @@ export class XFuzzyService {
     (cantidad: number, gravedad: number, contacto: number, riesgo: number) =>{
       console.log(cantidad, gravedad, contacto, riesgo);
       return this.http.get(`${URL}/xFuzzy?cantidad=${cantidad}&gravedad=${gravedad}&contacto=${contacto}&riesgo=${riesgo}`)
-                .pipe(map( (resp: any) => resp.valorTriaje))
+                .pipe(map( (resp: any) => {
+                  console.log(resp);
+                  return resp.valorTriaje;
+                }))
     }
 }

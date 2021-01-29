@@ -15,7 +15,7 @@
                 </ul>
                 <ul class="list-group" *ngIf="pregunta.tipoAlternativa==2" >
                     <li *ngFor="let alternativa of pregunta.alternativas; let aIdx = index " >  
-                        <input class="form-check-input" type="radio"  [formControlName]="nombreControles[idx]"  [name]="nombreControles[idx]" [value]="alternativa" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio"  [formControlName]="nombreControles[idx]"  [name]="nombreControles[idx]" [value]="aIdx" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1"  class="form-control" >
                             <label class="alternativas">{{alternativa}}</label>
                         </label>
