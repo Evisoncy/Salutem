@@ -10,7 +10,9 @@ import { CuestionarioComponent } from './triaje/cuestionario/cuestionario.compon
 import { PreguntaComponent } from './triaje/pregunta/pregunta.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { FooterComponent } from './componentes/footer/footer.component';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ResultadoComponent } from './triaje/resultado/resultado.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,11 +23,15 @@ import { FooterComponent } from './componentes/footer/footer.component';
     PreguntaComponent,
     NavbarComponent,
     FooterComponent,
+    ResultadoComponent
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

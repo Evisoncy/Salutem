@@ -2,3 +2,10 @@
     background: #0f0f0f;
     color: #fff;
 }
+.btn-primary{
+    background-color: #6A64FF!important;
+}
+
+.btn-secondary{
+    background-color: #121212!important;
+}

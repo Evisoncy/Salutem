@@ -6,9 +6,11 @@ import { TriajeComponent } from './triaje/triaje.component';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent},
+  {path:"triaje", loadChildren: () => import('./triaje/triaje.module').then( m => m.TriajeModule)},
+  {path:"download", component:DownloadComponent},
+
   {path:"",pathMatch:"full", redirectTo: "/home"},
-    {path:"triaje", component:TriajeComponent},
-  {path:"download", component:DownloadComponent}
+  {path:"**",pathMatch:"full", redirectTo: "/home"}
   
 ];
 

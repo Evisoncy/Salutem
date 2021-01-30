@@ -5,7 +5,7 @@ body {
 
 .topnav {
     overflow: auto;
-    background-color: #000;
+    background-color: #121212;
 }
 
 .topnav a {
@@ -33,17 +33,18 @@ body {
 }
 
 .header-left a {
-    background-color: black;
+    background-color: #121212;
 }
 
 .topnav a:target {
     background-color: #ddd;
-    color: black;
+    color: #121212;
 }
 
 .topnav a.active {
     background-color: #6A64FF;
     color: white;
+    font-weight: bold;
 }
 
 .topnav .icon {
